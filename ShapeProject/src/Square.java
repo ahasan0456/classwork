@@ -3,19 +3,16 @@
 *	Last Updated: 10-17-17
 *	Description: Square file for Shape Project.
 */
-public class Square implements Shape
+public class Square extends Rectangle
 {
 	private double length;
 	public Square(double length)
 	{
+		super(length,length);
 		this.length=length;
 	}
-	public double perimeter()
+	public String toString()
 	{
-		return 4*length;
-	}
-	public double area()
-	{
-		return length*length;
+		 return "Square, Side Length: " + length + ", Area: " + this.area() + ", Perimeter: " + this.perimeter();
 	}
 }

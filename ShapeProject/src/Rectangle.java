@@ -20,4 +20,8 @@ public class Rectangle implements Shape
 	{
 		return length*width;
 	}
+	public String toString()
+	{
+		 return "Rectangle, Width: " + width + ", Length: " + length + ", Area: " + this.area() + ", Perimeter: " + this.perimeter();
+	}
 }

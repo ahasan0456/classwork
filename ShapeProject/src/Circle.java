@@ -19,4 +19,8 @@ public class Circle implements Shape
 	{
 		return pi*radius*radius;
 	}
+	public String toString()
+	{
+		 return "Circle, Radius: " + radius + ", Area: " + this.area() + ", Perimeter: " + this.perimeter();
+	}
 }
