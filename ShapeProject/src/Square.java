@@ -1,6 +1,6 @@
 /*
 *	Author: Amir Hasan
-*	Last Updated: 10-17-17
+*	Last Updated: 10-18-17
 *	Description: Square file for Shape Project.
 */
 public class Square extends Rectangle
