@@ -1,9 +1,7 @@
 /*
 *	Author: Amir Hasan
-*	Last Updated: 10-18-17
+*	Last Updated: 10-22-17
 *	Description: Runner file for Shape Project (Lab 2.1).
-*	Choose one of the following: Triangle, Pentagon, Hexagon, Heptagon, etc.
-*	Choose one of the following: Rhombus, Trapezoid, Parallelogram, Kite
 */
 public class Runner
 {
