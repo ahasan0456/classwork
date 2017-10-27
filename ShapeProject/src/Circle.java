@@ -5,8 +5,8 @@
 */
 public class Circle implements Shape
 {
-	public double radius;
-	public static double pi=3.14;
+	private double radius;
+	private static double pi=3.14;
 	public Circle(double radius)
 	{
 		this.radius=radius;
