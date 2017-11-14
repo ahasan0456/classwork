@@ -58,7 +58,7 @@ public class ArrayMethods
 	}
 	public static int[][] productArray(int[] arr1, int[]arr2)
 	{
-		int[][]product=new int[arr1.length][arr2.length];
+		int[][]product=new int[arr2.length][arr1.length];
 		for(int x=0;x<product.length;x++)
 		{
 			for(int y=0;y<product[x].length;y++)
@@ -104,13 +104,15 @@ public class ArrayMethods
 		}*/
 		for(int x=0;x<pTriangle.length;x++)
 		{
-			System.out.print(" ");
+			for(int z=(pTriangle.length-(x+1));z>=0;z--)
+			{
+				System.out.print(" ");
+			}
 			for(int y=0;y<pTriangle[x].length;y++)
 			{
 				System.out.print(pTriangle[x][y]);
 				System.out.print(" ");
 			}
-			System.out.print(" ");
 			System.out.println();
 		}
 	}
