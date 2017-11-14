@@ -8,7 +8,7 @@ public class ArrayMethods
 	public static void main(String[]args)
 	{
 		int[] list= {1,2,3,7,5,1,0,1,2,1,0,9,5};
-		int[] list1= {1,2,3};
+		int[] list1= {1,2,3,4};
 		int[] list2= {4,3,2};
 		printArr(list);
 		System.out.println();
@@ -21,11 +21,6 @@ public class ArrayMethods
 			System.out.println();
 		}
 		int[][] pascalTri=pascalTriangle(5);
-		for(int x=0;x<pascalTri.length;x++)
-		{
-			printArr(pascalTri[x]);
-			System.out.println();
-		}
 		printPascalTriangle(pascalTri);
 	}
 	public static int[] removeDuplicates(int[] list)
@@ -35,7 +30,7 @@ public class ArrayMethods
 		for(int i=0;i<list.length;i++)
 		{
 			boolean unique=true;
-			for(int j=i+1;j<list.length-1;j++)
+			for(int j=i+1;j<list.length;j++)
 			{
 				if(list[i]==list[j])
 				{
@@ -90,18 +85,13 @@ public class ArrayMethods
 	}
 	private static void printArr(int[]list)
 	{
-		for(int item: list)
+		for(int item:list)
 		{
 			System.out.print("["+item+"]");
 		}
 	}
 	public static void printPascalTriangle(int[][] pTriangle)
 	{
-		/*for(int x=0;x<pTriangle.length;x++)
-		{
-			printArr(pTriangle[x]);
-			System.out.println();
-		}*/
 		for(int x=0;x<pTriangle.length;x++)
 		{
 			for(int z=(pTriangle.length-(x+1));z>=0;z--)
