@@ -1,6 +1,6 @@
 /*
 *	Authors: Amir Hasan & Justin Fagan
-*	Last Updated: 11-14-17
+*	Last Updated: 11-15-17
 *	Description: Lab 3.1
 */
 public class ArrayMethods
@@ -20,7 +20,7 @@ public class ArrayMethods
 			printArr(list12product[x]);
 			System.out.println();
 		}
-		int[][] pascalTri=pascalTriangle(5);
+		int[][] pascalTri=pascalTriangle(7);
 		printPascalTriangle(pascalTri);
 	}
 	public static int[] removeDuplicates(int[] list)
