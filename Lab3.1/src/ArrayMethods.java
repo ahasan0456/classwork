@@ -20,7 +20,7 @@ public class ArrayMethods
 			printArr(list12product[x]);
 			System.out.println();
 		}
-		int[][] pascalTri=pascalTriangle(7);
+		int[][] pascalTri=pascalTriangle(9);
 		printPascalTriangle(pascalTri);
 	}
 	public static int[] removeDuplicates(int[] list)
@@ -98,9 +98,14 @@ public class ArrayMethods
 			{
 				System.out.print(" ");
 			}
+			if(pTriangle.length>5&&x<5)
+			{
+				System.out.print(" ");
+			}
 			for(int y=0;y<pTriangle[x].length;y++)
 			{
 				System.out.print(pTriangle[x][y]);
+				System.out.print(" ");
 				System.out.print(" ");
 			}
 			System.out.println();
