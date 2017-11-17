@@ -1,32 +1,58 @@
 /*
 *	Author: Amir Hasan & Justin Fagan
-*	Last Updated: 11-16-17
+*	Last Updated: 11-17-17
 *	Description: Lab 3.2
 */
 public class ArrayMethods2
 {
-	public static void main(String[]args)
+	public static void main(String[] args)
 	{
-		printArr(merge(args, args));
+		String[] test1= {"Amethyst","Basketball","X-ray"};
+		String[] test2= {"Alphabet","Cooking","Eating","Sleeping"};
+		String[] merged=merge(test1,test2);
+		printArr(merged);
 	}
 	private static void printArr(String[] list) {
 		for(String h:list)
-			System.out.print(list[i]);
+		{
+			System.out.print("["+h+"] ");
+		}
+		System.out.println();
 	}
-	public static String[] merge(String[]list1,String[]list2)
+	public static String[] merge(String[] list1,String[] list2)
 	{
 		int size= list1.length+list2.length;
-		String[]result=new String[size];
-		String add;
-		for(int j=0;j<list1.length;j++)
+		String[] result=new String[size];
+		int i=0; //current position in result
+		int j=0; //current position in list1
+		int k=0; //current position in list2
+		while(i<size)
 		{
-			result[j]=list1[j];
+			if(j<list1.length&&k<list2.length)
+			{
+				if(list1[j].compareTo(list2[k])<0)
+				{
+					result[i]=list1[j];
+					j++;
+				}
+				else
+				{
+					result[i]=list2[k];
+					k++;
+				}
+			}
+			else if(j==list1.length)
+			{
+				result[i]=list2[k];
+				k++;
+			}
+			else
+			{
+				result[i]=list1[j];
+				j++;
+			}
+			i++;
 		}
-		for(int k=list1.length+1;k<size;k++)
-		{
-			result[k]=list2[k-4];
-		}
-		//result[i]=add;
 		return result;
 	}
 	public static String[] mergeSort(String[] list)
