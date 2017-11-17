@@ -11,6 +11,8 @@ public class ArrayMethods2
 		String[] test2= {"Alphabet","Cooking","Eating","Sleeping"};
 		String[] merged=merge(test1,test2);
 		printArr(merged);
+		int[] test3= {6,2,8,4,6,0,1,7};
+		System.out.println(partition(test3));
 	}
 	private static void printArr(String[] list) {
 		for(String h:list)
@@ -64,6 +66,16 @@ public class ArrayMethods2
 	}
 	public static int partition(int[] list)
 	{
+		int[] newList=new int[list.length];
+		int tracker=0;
 		int pivotNum=list[0];
+		for(int i=0;i<=list.length;i++)
+		{
+			if(list[i]<=pivotNum)
+			{
+				
+			}
+		}
+		return -1;
 	}
 }
