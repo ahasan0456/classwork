@@ -1,6 +1,6 @@
 /*
 *	Author: Amir Hasan & Justin Fagan
-*	Last Updated: 11-17-17
+*	Last Updated: 11-21-17
 *	Description: Lab 3.2
 */
 public class ArrayMethods2
@@ -11,14 +11,15 @@ public class ArrayMethods2
 		String[] test2= {"Alphabet","Cooking","Eating","Sleeping"};
 		String[] merged=merge(test1,test2);
 		printArr(merged);
-		String[] test4= {"Nested","Quickly","Array","Match"};
+		String[] test4= {"Nested","Quickly","Array","Match","Zebra","Unicorn"};
 		String[] mergeSorted=mergeSort(test4);
-		printArr(mergeSorted);
-		int[] test3= {6,2,8,4,6,0,1,7};//Should return 5	
-		System.out.println(partition(test3)); //Should be {2,4,6,0,1,6,8,7}
-		printArr(test3);
-		int[] test5= {0,1,6,5,4,2,7};//Should return 0
-		System.out.println(partition(test5));
+		printArr(mergeSorted); //Should return {Array,Match,Nested,Quickly,Unicorn,Zebra}
+		int[] test3= {6,2,8,4,6,0,1,7};
+		System.out.println(partition(test3)); //Should return 5
+		printArr(test3); //Should return {2,4,6,0,1,6,8,7}
+		int[] test5= {0,1,6,5,4,2,7};
+		System.out.println(partition(test5)); //Should return 0
+		printArr(test5); //Should return the original order
 	}
 	private static void printArr(String[] list) {
 		for(String h:list)
@@ -80,55 +81,32 @@ public class ArrayMethods2
 			for(int x=0;x<list1.length;x++)
 			{
 				list1[x]=list[x];
-				z=x;
+				z=x+1;
 			}
 			for(int y=0;y<list2.length;y++)
 			{
 				list2[y]=list[z];
+				z++;
 			}
 			String[] sort1=mergeSort(list1);
 			String[] sort2=mergeSort(list2);
 			String[] newList=merge(sort1,sort2);
 			return newList;
 		}
-		else
-		{
-			return list;
-		}
+		return list;
 	}
 	public static int partition(int[] list)
 	{
-		/*boolean sorted=false;
-		for(int x=0;x<list.length-1;x++) //checks if list is sorted
-		{
-			if(list[x]<=list[x+1])
-				sorted=true;
-		}
-		while(!sorted)
-		{
-			int tracker=0;
-			int pivotNum=list[tracker];
-			for(int i=0;i<list.length;i++)
-			{
-				if(list[i]<=pivotNum)
-				{
-					swap(list, i,i+1);
-					tracker++;
-				}
-			}
-		}
-		return tracker;*/
 		int tracker=0;
 		int pivotNum=list[0];
-		for(int i=0;i<list.length;i++)
+		for(int i=1;i<list.length;i++)
 		{
-			if(list[i]<=pivotNum&&i>0)
+			if(list[i]<=pivotNum)
 			{
-				for(int j=tracker+1;j<(i-tracker);j++)
+				for(int j=0;j<i-tracker;j++)
 				{
-					swap(list,j,j+1);
+					swap(list,i-j,i-j-1);
 				}
-				swap(list,tracker,tracker+1);
 				tracker++;
 			}
 		}
