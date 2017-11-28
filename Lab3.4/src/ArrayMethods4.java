@@ -16,7 +16,7 @@ public class ArrayMethods4
 		long totalTime;
 		long sumTime=0;
 		long avgTime;
-		while(count<20)
+		while(count<10)
 		{
 			int[] testTime= {5,6,3,2,8,7,4,6,3,1,4,3,0,9};
 			startTime=System.nanoTime();

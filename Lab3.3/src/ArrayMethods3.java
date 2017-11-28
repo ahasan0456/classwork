@@ -23,7 +23,7 @@ public class ArrayMethods3
 			sumTime+=totalTime;
 			count++;
 		}
-		avgTime=sumTime/10;
+		avgTime=sumTime/20;
 		System.out.println("Average time taken by bubble sort: "+avgTime);
 		sumTime=0;
 		count=0;
@@ -37,7 +37,7 @@ public class ArrayMethods3
 			sumTime+=totalTime;
 			count++;
 		}
-		avgTime=sumTime/10;
+		avgTime=sumTime/20;
 		System.out.println("Average time taken by selection sort: "+avgTime);
 		sumTime=0;
 		count=0;
@@ -51,7 +51,7 @@ public class ArrayMethods3
 			sumTime+=totalTime;
 			count++;
 		}
-		avgTime=sumTime/10;
+		avgTime=sumTime/20;
 		System.out.println("Average time taken by insertion sort: "+avgTime);
 	}
 	public static void insertionSort(int[] list1)
