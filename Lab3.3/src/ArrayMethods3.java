@@ -13,7 +13,7 @@ public class ArrayMethods3
 		long totalTime;
 		long sumTime=0;
 		long avgTime;
-		while(count<10)
+		while(count<20)
 		{
 			int[] testTime= {5,6,3,2,8,7,4,6,3,1,4,3,0,9};
 			startTime=System.nanoTime();
@@ -21,23 +21,38 @@ public class ArrayMethods3
 			endTime=System.nanoTime();
 			totalTime=endTime-startTime;
 			sumTime+=totalTime;
+			count++;
 		}
 		avgTime=sumTime/10;
 		System.out.println("Average time taken by bubble sort: "+avgTime);
 		sumTime=0;
 		count=0;
-		int[] testTime= {5,6,3,2,8,7,4,6,3,1,4,3,0,9};
-		startTime=System.nanoTime();
-		selectionSort(testTime);
-		endTime=System.nanoTime();
-		totalTime=endTime-startTime;
-		System.out.println("Time taken by selection sort: "+totalTime);
-		int[] testTimeThree= {5,6,3,2,8,7,4,6,3,1,4,3,0,9};
-		startTime=System.nanoTime();
-		insertionSort(testTimeThree);
-		endTime=System.nanoTime();
-		totalTime=endTime-startTime;
-		System.out.println("Time taken by insertion sort: "+totalTime);
+		while(count<20)
+		{
+			int[] testTime= {5,6,3,2,8,7,4,6,3,1,4,3,0,9};
+			startTime=System.nanoTime();
+			selectionSort(testTime);
+			endTime=System.nanoTime();
+			totalTime=endTime-startTime;
+			sumTime+=totalTime;
+			count++;
+		}
+		avgTime=sumTime/10;
+		System.out.println("Average time taken by selection sort: "+avgTime);
+		sumTime=0;
+		count=0;
+		while(count<20)
+		{
+			int[] testTime= {5,6,3,2,8,7,4,6,3,1,4,3,0,9};
+			startTime=System.nanoTime();
+			insertionSort(testTime);
+			endTime=System.nanoTime();
+			totalTime=endTime-startTime;
+			sumTime+=totalTime;
+			count++;
+		}
+		avgTime=sumTime/10;
+		System.out.println("Average time taken by insertion sort: "+avgTime);
 	}
 	public static void insertionSort(int[] list1)
 	{
