@@ -10,13 +10,13 @@ public class ArrayMethods4
 		int[] test1= {0,1,2,3,4,5};
 		int[] test2= {6,4,12,8,10};
 		int[] test3= {4,2,5,7,4,2,5,9,1};
-		int count=0;
+	/*	int count=0;
 		long startTime;
 		long endTime;
 		long totalTime;
 		long sumTime=0;
 		long avgTime;
-		while(count<10)
+		while(count<20)
 		{
 			int[] testTime= {5,6,3,2,8,7,4,6,3,1,4,3,0,9};
 			startTime=System.nanoTime();
@@ -26,8 +26,10 @@ public class ArrayMethods4
 			sumTime+=totalTime;
 			count++;
 		}
-		avgTime=sumTime/10;
-		System.out.println("Average time taken by quick sort: "+avgTime);
+		avgTime=sumTime/20;
+		System.out.println("Average time taken by quick sort: "+avgTime);*/
+		quickSort(test2,0,test2.length-1);
+		printArr(test2);
 	}
 	public static void partition(int[] list1, int front, int back)
 	{
@@ -49,7 +51,9 @@ public class ArrayMethods4
 	{
 		if(front!=back)
 		{
-			quickSort(list1,front+1,back);
+			System.out.println(back);
+			quickSort(list1,front,(front+back/2));
+			quickSort(list1,((front+back)/2)+1,back);
 		}
 		partition(list1,front,back);
 	}
