@@ -10,7 +10,7 @@ public class ArrayMethods4
 		int[] test1= {0,1,2,3,4,5};
 		int[] test2= {6,4,12,8,10};
 		int[] test3= {4,2,5,7,4,2,5,9,1};
-	/*	int count=0;
+		int count=0;
 		long startTime;
 		long endTime;
 		long totalTime;
@@ -27,11 +27,11 @@ public class ArrayMethods4
 			count++;
 		}
 		avgTime=sumTime/20;
-		System.out.println("Average time taken by quick sort: "+avgTime);*/
-		quickSort(test2,0,test2.length-1);
-		printArr(test2);
+		System.out.println("Average time taken by quick sort: "+avgTime);
+		//quickSort(test3,0,test3.length-1);
+		//printArr(test3);
 	}
-	public static void partition(int[] list1, int front, int back)
+	public static int partition(int[] list1, int front, int back)
 	{
 		int pivotNum=list1[front];
 		int tracker=front;
@@ -46,20 +46,33 @@ public class ArrayMethods4
 				tracker++;
 			}
 		}
+		return tracker;
 	}
 	public static void quickSort(int[] list1, int front, int back)
 	{
-		if(front!=back)
+		if(front<back)
 		{
-			System.out.println(back);
-			quickSort(list1,front,(front+back/2));
-			quickSort(list1,((front+back)/2)+1,back);
+			int tracker=partition(list1,front,back);
+			quickSort(list1,front,tracker-1);
+			quickSort(list1,tracker+1,back);
 		}
-		partition(list1,front,back);
 	}
-	public static void customSort()
+	//radix sort
+	public static void customSort(int[] list1)
 	{
-		
+		int digits=3;
+		int placeholder;
+		for(int x=0;x<digits;x++)
+		{
+			for(int y=1;y<list1.length;y++)
+			{
+				int tracker=y;
+			/*	while()
+				{
+					
+				}*/
+			}
+		}
 	}
 	public static void swap(int arr[],int i, int j)
 	{
