@@ -1,6 +1,6 @@
 /*
 *	Author: Amir Hasan
-*	Last Updated: 11-27-17
+*	Last Updated: 12-3-17
 *	Description: Lab 3.4
 */
 public class ArrayMethods4
@@ -28,8 +28,8 @@ public class ArrayMethods4
 		}
 		avgTime=sumTime/20;
 		System.out.println("Average time taken by quick sort: "+avgTime);
-		//quickSort(test3,0,test3.length-1);
-		//printArr(test3);
+		customSort(test3);
+		printArr(test3);
 	}
 	public static int partition(int[] list1, int front, int back)
 	{
@@ -57,21 +57,26 @@ public class ArrayMethods4
 			quickSort(list1,tracker+1,back);
 		}
 	}
-	//radix sort
+	//shell sort
 	public static void customSort(int[] list1)
 	{
-		int digits=3;
-		int placeholder;
-		for(int x=0;x<digits;x++)
+		int gap=list1.length/2;
+		int startPos=list1.length-gap;
+		int tracker=startPos;
+		while(gap>0)
 		{
-			for(int y=1;y<list1.length;y++)
+			while(startPos-gap>=0)
 			{
-				int tracker=y;
-			/*	while()
+				while(tracker-gap>=0&&list1[tracker]<list1[tracker-gap])
 				{
-					
-				}*/
+					swap(list1,tracker,tracker-gap);
+				}
+				startPos-=gap;
+				tracker=startPos;
 			}
+			gap=gap/2;
+			startPos=list1.length-gap;
+			tracker=startPos;
 		}
 	}
 	public static void swap(int arr[],int i, int j)
