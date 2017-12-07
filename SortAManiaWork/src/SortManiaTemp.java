@@ -297,13 +297,6 @@ public class SortManiaTemp
 			objStr[i]=arr[i].toString();
 		}
 		mergeSort(objStr);
-		
-	}
-	private static void intSwap(int[] arr, int i, int j)
-	{
-		int temp=arr[i];
-		arr[i]=arr[j];
-		arr[j]=temp;
 	}
 	public static void insertionSort(int[] list1)
 	{
@@ -311,7 +304,7 @@ public class SortManiaTemp
 			for(int j=i;j>0;j--)
 			{
 				if(list1[j]<list1[j-1])
-					intSwap(list1, j, j-1);
+					swap(list1, j, j-1);
 			}
 			
 	}
@@ -329,7 +322,7 @@ public class SortManiaTemp
 			{
 				if(list1[i]>list1[i+gap])
 				{
-					intSwap(list1,i,i+gap);
+					swap(list1,i,i+gap);
 					swapped=true;
 				}
 			}
@@ -438,13 +431,7 @@ public class SortManiaTemp
 	            for (int j = 0; j < n-i-1; j++)
 	                if (list1[j].compareToIgnoreCase(list1[j+1])> 0)
 	                {
-	                    stringSwap(list1,j,j+1);
+	                    swap(list1,j,j+1);
 	                }
-	}
-	private static void stringSwap(String[] arr, int i, int j)
-	{
-		String temp=arr[i];
-		arr[i]=arr[j];
-		arr[j]=temp;
 	}
 }
