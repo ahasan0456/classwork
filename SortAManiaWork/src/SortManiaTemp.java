@@ -23,83 +23,10 @@ public class SortManiaTemp
 		avgTime=sumTime/10;
 		System.out.println(avgTime);
 	}
-	public static int[] mostlySorted()
+	public static int challengeOne(int[]test)
 	{
-		int[] sorted=new int[10000];
-		for(int x=0;x<sorted.length;x++)
-		{
-			if(x<7500)
-			{
-				sorted[x]=x;
-			}
-			else
-			{
-				sorted[x]=getRandomInteger(7500,10000);
-			}
-		}
-		return sorted;
-	}
-	private static int getRandomInteger(int low, int high)
-	{
-		if(low>high)
-		{
-			int swap=low;
-			low=high;
-			high=swap;
-		}
-		return (int)(Math.random()*(high-(low-1))+low);
-	}
-	//prints out the passed-in array of ints
-	public static void printArr(int[] list)
-	{
-		for(int s:list)
-		{
-			System.out.print("["+s+"] ");
-		}
-	}
-	//prints out the passed-in array of Strings
-	public static void printArr(String[] list)
-	{
-		for(String s:list)
-		{
-			System.out.print("["+s+"] ");
-		}
-	}
-	public static String[] merge(String[] list1,String[] list2)
-	{
-		int size= list1.length+list2.length;
-		String[] result=new String[size];
-		int i=0; //current position in result
-		int j=0; //current position in list1
-		int k=0; //current position in list2
-		while(i<size)
-		{
-			if(j<list1.length&&k<list2.length)
-			{
-				if(list1[j].compareTo(list2[k])<0)
-				{
-					result[i]=list1[j];
-					j++;
-				}
-				else
-				{
-					result[i]=list2[k];
-					k++;
-				}
-			}
-			else if(j==list1.length)
-			{
-				result[i]=list2[k];
-				k++;
-			}
-			else
-			{
-				result[i]=list1[j];
-				j++;
-			}
-			i++;
-		}
-		return result;
+		radixSort(test,1);
+		return getMedian(test);
 	}
 	/*public static int challengeTwo(String[] list, String find)
 	{
@@ -181,25 +108,6 @@ public class SortManiaTemp
 		}
 		return pos;
 	}
-	//swaps 2 strings in an array
-	public static void swap(String arr[],int i, int j)
-	{
-		String x=arr[i];
-		arr[i]=arr[j];
-		arr[j]=x;
-	}
-	//given a sorted array, retrieves the median
-	public static int getMedian(int[] list)
-	{
-		if(list.length%2==1)
-		{
-			return list[list.length/2];
-		}
-		else
-		{
-			return (list[list.length/2]+list[(list.length/2)-1])/2;
-		}
-	}
 	//insertion sort
 	/*public static int challengeFive(Object[] list)
 	{
@@ -231,20 +139,6 @@ public class SortManiaTemp
 		}
 		return getMedian(list);
 	}
-	//swaps two objects in an array
-	public static void swap(Object arr[],int i, int j)
-	{
-		Object x=arr[i];
-		arr[i]=arr[j];
-		arr[j]=x;
-	}
-	//swaps two ints in an array
-	public static void swap(int arr[],int i, int j)
-	{
-		int x=arr[i];
-		arr[i]=arr[j];
-		arr[j]=x;
-	}
 	//insertion sort on each nested array and records the median, then takes the median of those medians after sorting them
 	public static int challengeFour(int[][] list)
 	{
@@ -254,25 +148,6 @@ public class SortManiaTemp
 			meds[x]=challengeThree(list[x]);
 		}
 		return challengeThree(meds);
-	}
-	public static void calculateRunTime(int[]test)
-	{
-		long startTime = System.nanoTime();
-		//methodToTime();
-		int median = challengeOne(test);
-		long endTime = System.nanoTime();
-		long duration = (endTime - startTime);
-		System.out.println(median);
-		System.out.println(duration);
-	}
-	public static int challengeOne(int[]test)
-	{
-		radixSort(test,1);
-		if(test.length%2==0)
-		{
-			return (int)(test[test.length/2]+test[(test.length/2)-1])/2;
-		}
-		return (int)test[test.length/2];
 	}
 	public static int challengeFive(Object[]test, Object query)
 	{
@@ -288,6 +163,127 @@ public class SortManiaTemp
 				return x;
 		}
 		return -1;
+	}
+	public static int[] mostlySorted()
+	{
+		int[] sorted=new int[10000];
+		for(int x=0;x<sorted.length;x++)
+		{
+			if(x<7500)
+			{
+				sorted[x]=x;
+			}
+			else
+			{
+				sorted[x]=getRandomInteger(7500,10000);
+			}
+		}
+		return sorted;
+	}
+	private static int getRandomInteger(int low, int high)
+	{
+		if(low>high)
+		{
+			int swap=low;
+			low=high;
+			high=swap;
+		}
+		return (int)(Math.random()*(high-(low-1))+low);
+	}
+	//prints out the passed-in array of ints
+	public static void printArr(int[] list)
+	{
+		for(int s:list)
+		{
+			System.out.print("["+s+"] ");
+		}
+	}
+	//prints out the passed-in array of Strings
+	public static void printArr(String[] list)
+	{
+		for(String s:list)
+		{
+			System.out.print("["+s+"] ");
+		}
+	}
+	public static String[] merge(String[] list1,String[] list2)
+	{
+		int size= list1.length+list2.length;
+		String[] result=new String[size];
+		int i=0; //current position in result
+		int j=0; //current position in list1
+		int k=0; //current position in list2
+		while(i<size)
+		{
+			if(j<list1.length&&k<list2.length)
+			{
+				if(list1[j].compareTo(list2[k])<0)
+				{
+					result[i]=list1[j];
+					j++;
+				}
+				else
+				{
+					result[i]=list2[k];
+					k++;
+				}
+			}
+			else if(j==list1.length)
+			{
+				result[i]=list2[k];
+				k++;
+			}
+			else
+			{
+				result[i]=list1[j];
+				j++;
+			}
+			i++;
+		}
+		return result;
+	}
+	//swaps 2 strings in an array
+	public static void swap(String arr[],int i, int j)
+	{
+		String x=arr[i];
+		arr[i]=arr[j];
+		arr[j]=x;
+	}
+	//given a sorted array, retrieves the median
+	public static int getMedian(int[] list)
+	{
+		if(list.length%2==1)
+		{
+			return list[list.length/2];
+		}
+		else
+		{
+			return (list[list.length/2]+list[(list.length/2)-1])/2;
+		}
+	}
+	//swaps two objects in an array
+	public static void swap(Object arr[],int i, int j)
+	{
+		Object x=arr[i];
+		arr[i]=arr[j];
+		arr[j]=x;
+	}
+	//swaps two ints in an array
+	public static void swap(int arr[],int i, int j)
+	{
+		int x=arr[i];
+		arr[i]=arr[j];
+		arr[j]=x;
+	}
+	public static void calculateRunTime(int[]test)
+	{
+		long startTime = System.nanoTime();
+		//methodToTime();
+		int median = challengeOne(test);
+		long endTime = System.nanoTime();
+		long duration = (endTime - startTime);
+		System.out.println(median);
+		System.out.println(duration);
 	}
 	public static void objectSort(Object[]arr)
 	{
