@@ -11,26 +11,26 @@ public class CSVFilePractice
 	public static void main(String[] args)
 	{
 		String file="Book1.csv";
-		List<Integer> nums=readCSV(file);
-		for(Integer x:nums)
+		List<HighScore> scores=readCSV(file);
+		for(HighScore x:scores)
 		{
 			System.out.println(x);
 		}
 	}
-	public static List<Integer> readCSV(String file)
+	public static List<HighScore> readCSV(String file)
 	{
-		List<Integer> nums = new ArrayList<>();
+		List<HighScore> scores = new ArrayList<>();
 		Path pathToFile = Paths.get(file);
 		try(BufferedReader br = Files.newBufferedReader(pathToFile,StandardCharsets.US_ASCII))
 		{
 			String line=br.readLine();
 			while(line!=null)
 			{
-				String[] ints = line.split(",");
-				for(String s:ints)
-				{
-					nums.add(Integer.parseInt(s));
-				}
+				String[] score = line.split(",");
+				String name=score[0];
+				int num=Integer.parseInt(score[1]);
+				HighScore hs=new HighScore(name,num);
+				scores.add(hs);
 				line=br.readLine();
 			}
 		}
@@ -38,6 +38,6 @@ public class CSVFilePractice
 		{
 			e.printStackTrace();
 		}
-		return nums;
+		return scores;
 	}
 }
