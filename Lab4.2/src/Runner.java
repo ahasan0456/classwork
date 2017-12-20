@@ -1,5 +1,10 @@
 import java.io.File;
 import java.util.List;
+/*
+*	Author: Amir Hasan
+*	Last Updated: 12-20-2017
+*	Description: Lab 4.2 - Runner to read a csv file.
+*/
 public class Runner
 {
 	public static void main(String[] args)

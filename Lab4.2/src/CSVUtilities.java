@@ -7,6 +7,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+/*
+*	Author: Amir Hasan
+*	Last Updated: 12-19-2017
+*	Description: Lab 4.2 - Utilities for reading a csv file.
+*/
 public class CSVUtilities
 {
 	ArrayList<String> CSVData;
