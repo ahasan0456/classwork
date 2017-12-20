@@ -4,7 +4,7 @@ public class Runner
 {
 	public static void main(String[] args)
 	{
-		File database=new File("Times_Square_Entertainment_Venues.csv");
+		File database=new File("Sidewalk_Caf__Licenses_and_Applications.csv");
 		CSVUtilities data=new CSVUtilities(database);
 		List<String> headers=data.getColumnHeaders();
 		List<String> companies=data.getData(0);
