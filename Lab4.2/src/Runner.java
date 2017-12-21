@@ -1,5 +1,11 @@
 import java.io.File;
 import java.util.List;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
 /*
 *	Author: Amir Hasan
 *	Last Updated: 12-20-2017
