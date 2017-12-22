@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 /*
 *	Author: Amir Hasan
-*	Last Updated: 12-19-2017
+*	Last Updated: 12-22-2017
 *	Description: Lab 4.2 - Utilities for reading a csv file.
 */
 public class CSVUtilities
@@ -46,7 +46,7 @@ public class CSVUtilities
 		return headers;
 	}
 	//Return an ArrayList with the data for a column specified
-	public List<String> getData(int column)
+	public List<String> getDataString(int column)
 	{
 		List<String> columnData=new ArrayList<>();
 		for(int x=1;x<this.CSVData.size();x++)
@@ -69,7 +69,7 @@ public class CSVUtilities
 	}
 
 	//Return an ArrayList with the data converted to Double
-	public List<Double> getDataDbl(int column)
+	public List<Double> getDataDouble(int column)
 	{
 		List<Double> columnData=new ArrayList<>();
 		for(int x=1;x<this.CSVData.size();x++)
