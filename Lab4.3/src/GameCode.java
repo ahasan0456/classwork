@@ -1,3 +1,5 @@
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -5,10 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 /*
 *	Author: Amir Hasan
-*	Last Updated: 1-1-18
+*	Last Updated: 1-3-18
 *	Description: Lab 4.3
 */
 public class GameCode extends Application
@@ -19,6 +20,8 @@ public class GameCode extends Application
 	}
 	public void start(Stage stage)
 	{
+		ArrayList<String> combination=new ArrayList<String>();
+		ArrayList<String> userInput=new ArrayList<String>();
 		Button red=new Button("Red");
 		red.setMinSize(60,60);
 		red.setMaxSize(60,60);
@@ -33,9 +36,80 @@ public class GameCode extends Application
 		yellow.setMaxSize(60,60);
 		HBox buttons=new HBox(20,red,blue,green,yellow);
 		Label scoreDisp=new Label("Score: 0");
+		red.setOnAction(e ->
+		{
+			userInput.add("Red");
+			if(!checkPress(combination, userInput))
+			{
+				BackEnd.gameEnd(combination.size()-1);
+			}
+			else if(combination.size()==userInput.size())
+			{
+				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
+				score++;
+				scoreDisp.setText("Score: "+score);
+			}
+		});
+		green.setOnAction(e ->
+		{
+			userInput.add("Green");
+			if(!checkPress(combination, userInput))
+			{
+				BackEnd.gameEnd(combination.size()-1);
+			}
+			else if(combination.size()==userInput.size())
+			{
+				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
+				score++;
+				scoreDisp.setText("Score: "+score);
+			}
+		});
+		blue.setOnAction(e ->
+		{
+			userInput.add("Blue");
+			if(!checkPress(combination, userInput))
+			{
+				BackEnd.gameEnd(combination.size()-1);
+			}
+			else if(combination.size()==userInput.size())
+			{
+				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
+				score++;
+				scoreDisp.setText("Score: "+score);
+			}
+		});
+		yellow.setOnAction(e ->
+		{
+			userInput.add("Yellow");
+			if(!checkPress(combination, userInput))
+			{
+				BackEnd.gameEnd(combination.size()-1);
+			}
+			else if(combination.size()==userInput.size())
+			{
+				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
+				score++;
+				scoreDisp.setText("Score: "+score);
+			}
+		});
 		VBox space=new VBox(100,buttons,scoreDisp);
 		Scene scene=new Scene(space,300,300);
 		stage.setScene(scene);
 		stage.show();
+	}
+	public static boolean checkPress(ArrayList<String> correct, ArrayList<String> user)
+	{
+		if(user.get(user.size()-1).equals(correct.get(correct.size()-1)))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	public static void addOne(ArrayList<String> combination)
+	{
+		
 	}
 }
