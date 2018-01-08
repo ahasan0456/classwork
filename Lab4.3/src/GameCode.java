@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 /*
 *	Author: Amir Hasan
-*	Last Updated: 1-3-18
+*	Last Updated: 1-7-18
 *	Description: Lab 4.3
 */
 public class GameCode extends Application
@@ -41,13 +41,14 @@ public class GameCode extends Application
 			userInput.add("Red");
 			if(!checkPress(combination, userInput))
 			{
-				BackEnd.gameEnd(combination.size()-1);
+				int finalScore=combination.size()-1;
 			}
 			else if(combination.size()==userInput.size())
 			{
 				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
 				score++;
 				scoreDisp.setText("Score: "+score);
+				addOne(combination);
 			}
 		});
 		green.setOnAction(e ->
@@ -55,13 +56,14 @@ public class GameCode extends Application
 			userInput.add("Green");
 			if(!checkPress(combination, userInput))
 			{
-				BackEnd.gameEnd(combination.size()-1);
+				int finalScore=combination.size()-1;
 			}
 			else if(combination.size()==userInput.size())
 			{
 				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
 				score++;
 				scoreDisp.setText("Score: "+score);
+				addOne(combination);
 			}
 		});
 		blue.setOnAction(e ->
@@ -69,13 +71,14 @@ public class GameCode extends Application
 			userInput.add("Blue");
 			if(!checkPress(combination, userInput))
 			{
-				BackEnd.gameEnd(combination.size()-1);
+				int finalScore=combination.size()-1;
 			}
 			else if(combination.size()==userInput.size())
 			{
 				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
 				score++;
 				scoreDisp.setText("Score: "+score);
+				addOne(combination);
 			}
 		});
 		yellow.setOnAction(e ->
@@ -83,13 +86,14 @@ public class GameCode extends Application
 			userInput.add("Yellow");
 			if(!checkPress(combination, userInput))
 			{
-				BackEnd.gameEnd(combination.size()-1);
+				int finalScore=combination.size()-1;
 			}
 			else if(combination.size()==userInput.size())
 			{
 				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
 				score++;
 				scoreDisp.setText("Score: "+score);
+				addOne(combination);
 			}
 		});
 		VBox space=new VBox(100,buttons,scoreDisp);
@@ -110,6 +114,34 @@ public class GameCode extends Application
 	}
 	public static void addOne(ArrayList<String> combination)
 	{
-		
+		int colorPick=getRandomInteger(1,4);
+		String add;
+		if(colorPick==1)
+		{
+			add="Red";
+		}
+		else if(colorPick==2)
+		{
+			add="Blue";
+		}
+		else if(colorPick==3)
+		{
+			add="Green";
+		}
+		else
+		{
+			add="Yellow";
+		}
+		combination.add(add);
+	}
+	private static int getRandomInteger(int low, int high)
+	{
+		if(low>high)
+		{
+			int swap=low;
+			low=high;
+			high=swap;
+		}
+		return (int)(Math.random()*(high-(low-1))+low);
 	}
 }

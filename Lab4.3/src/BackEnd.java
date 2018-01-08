@@ -1,12 +1,50 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 /*
 *	Author: Amir Hasan
-*	Last Updated: 1-3-18
+*	Last Updated: 1-7-18
 *	Description: Lab 4.3
 */
 public class BackEnd
 {
-	public static void gameEnd(int score)
+	public static ArrayList<String> CSVtoList(String filestr)
 	{
-		
+		File csv=new File(filestr);
+		ArrayList<String> CSVData=new ArrayList<String>();
+		Path pathToFile = Paths.get(csv.getPath());
+		try(BufferedReader br = Files.newBufferedReader(pathToFile,StandardCharsets.US_ASCII))
+		{
+			String line=br.readLine();
+			while(line!=null)
+			{
+				CSVData.add(line);
+				line=br.readLine();
+			}
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		return CSVData;
+	}
+	public static void addScore(String filestr, int score)
+	{
+		File csv=new File(filestr);
+		try(FileWriter fw=new FileWriter(csv))
+		{
+			fw.write("/n"+score);
+			fw.close();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 }

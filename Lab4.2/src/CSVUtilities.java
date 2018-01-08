@@ -67,7 +67,6 @@ public class CSVUtilities
 		}
 		return columnData;
 	}
-
 	//Return an ArrayList with the data converted to Double
 	public List<Double> getDataDouble(int column)
 	{
