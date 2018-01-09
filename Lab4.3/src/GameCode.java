@@ -24,6 +24,7 @@ public class GameCode extends Application
 	{
 		ArrayList<String> combination=new ArrayList<String>();
 		ArrayList<String> userInput=new ArrayList<String>();
+		addOne(combination);
 		Button red=new Button("Red");
 		red.setMinSize(60,60);
 		red.setMaxSize(60,60);
