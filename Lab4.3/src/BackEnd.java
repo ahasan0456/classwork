@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 /*
 *	Author: Amir Hasan
 *	Last Updated: 1-7-18
@@ -39,12 +41,23 @@ public class BackEnd
 		File csv=new File(filestr);
 		try(FileWriter fw=new FileWriter(csv))
 		{
-			fw.write("/n"+score);
+			fw.write("\n"+score);
 			fw.close();
 		}
 		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
+	}
+	public static ArrayList<Integer> getScores(String filestr)
+	{
+		ArrayList<String> data=CSVtoList("scores.csv");
+		ArrayList<Integer> scoreList=new ArrayList<Integer>(data.size()-1);
+		for(int i=0;i<scoreList.size();i++)
+		{
+			scoreList.set(i, Integer.parseInt(data.get(i+1)));
+		}
+		Collections.sort(scoreList);
+		return scoreList;
 	}
 }

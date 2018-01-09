@@ -1,11 +1,13 @@
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import java.awt.Color;
 import javafx.stage.Stage;
 /*
 *	Author: Amir Hasan
@@ -41,14 +43,31 @@ public class GameCode extends Application
 			userInput.add("Red");
 			if(!checkPress(combination, userInput))
 			{
+				red.setDisable(true);
+				green.setDisable(true);
+				blue.setDisable(true);
+				yellow.setDisable(true);
 				int finalScore=combination.size()-1;
+				BackEnd.addScore("scores.csv", finalScore);
 			}
 			else if(combination.size()==userInput.size())
 			{
+				red.setDisable(true);
+				green.setDisable(true);
+				blue.setDisable(true);
+				yellow.setDisable(true);
 				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
 				score++;
 				scoreDisp.setText("Score: "+score);
 				addOne(combination);
+				for(int i=0;i<combination.size();i++)
+				{
+					long now=System.nanoTime();
+					while(System.nanoTime()<now+1000000000)
+					{
+						
+					}
+				}
 			}
 		});
 		green.setOnAction(e ->
@@ -56,14 +75,24 @@ public class GameCode extends Application
 			userInput.add("Green");
 			if(!checkPress(combination, userInput))
 			{
+				red.setDisable(true);
+				green.setDisable(true);
+				blue.setDisable(true);
+				yellow.setDisable(true);
 				int finalScore=combination.size()-1;
+				BackEnd.addScore("scores.csv", finalScore);
 			}
 			else if(combination.size()==userInput.size())
 			{
+				red.setDisable(true);
+				green.setDisable(true);
+				blue.setDisable(true);
+				yellow.setDisable(true);
 				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
 				score++;
 				scoreDisp.setText("Score: "+score);
 				addOne(combination);
+				
 			}
 		});
 		blue.setOnAction(e ->
@@ -71,14 +100,24 @@ public class GameCode extends Application
 			userInput.add("Blue");
 			if(!checkPress(combination, userInput))
 			{
+				red.setDisable(true);
+				green.setDisable(true);
+				blue.setDisable(true);
+				yellow.setDisable(true);
 				int finalScore=combination.size()-1;
+				BackEnd.addScore("scores.csv", finalScore);
 			}
 			else if(combination.size()==userInput.size())
 			{
+				red.setDisable(true);
+				green.setDisable(true);
+				blue.setDisable(true);
+				yellow.setDisable(true);
 				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
 				score++;
 				scoreDisp.setText("Score: "+score);
 				addOne(combination);
+				
 			}
 		});
 		yellow.setOnAction(e ->
@@ -86,14 +125,24 @@ public class GameCode extends Application
 			userInput.add("Yellow");
 			if(!checkPress(combination, userInput))
 			{
+				red.setDisable(true);
+				green.setDisable(true);
+				blue.setDisable(true);
+				yellow.setDisable(true);
 				int finalScore=combination.size()-1;
+				BackEnd.addScore("scores.csv", finalScore);
 			}
 			else if(combination.size()==userInput.size())
 			{
+				red.setDisable(true);
+				green.setDisable(true);
+				blue.setDisable(true);
+				yellow.setDisable(true);
 				int score=Integer.parseInt(scoreDisp.getText().substring(7,scoreDisp.getText().length()));
 				score++;
 				scoreDisp.setText("Score: "+score);
 				addOne(combination);
+				
 			}
 		});
 		VBox space=new VBox(100,buttons,scoreDisp);
