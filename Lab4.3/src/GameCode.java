@@ -49,6 +49,21 @@ public class GameCode extends Application
 				yellow.setDisable(true);
 				int finalScore=combination.size()-1;
 				BackEnd.addScore("scores.csv", finalScore);
+				String scoreList="Scores\n";
+				ArrayList<Integer> scoreData=BackEnd.getScores("scores.csv");
+				for(int x=0;x<10;x++)
+				{
+					if(x<scoreData.size())
+					{
+						scoreList+=scoreData.get(x).toString()+"\n";
+					}
+				}
+				Label highScores=new Label(scoreList);
+				VBox nspace=new VBox(highScores);
+				Scene scene2=new Scene(nspace,300,300);
+				stage.setScene(scene2);
+				System.out.println(scoreList);
+				stage.show();
 			}
 			else if(combination.size()==userInput.size())
 			{
@@ -110,6 +125,21 @@ public class GameCode extends Application
 				yellow.setDisable(true);
 				int finalScore=combination.size()-1;
 				BackEnd.addScore("scores.csv", finalScore);
+				String scoreList="Scores\n";
+				ArrayList<Integer> scoreData=BackEnd.getScores("scores.csv");
+				for(int x=0;x<10;x++)
+				{
+					if(x<scoreData.size())
+					{
+						scoreList+=scoreData.get(x).toString()+"\n";
+					}
+				}
+				Label highScores=new Label(scoreList);
+				VBox nspace=new VBox(highScores);
+				Scene scene2=new Scene(nspace,300,300);
+				stage.setScene(scene2);
+				System.out.println(scoreList);
+				stage.show();
 			}
 			else if(combination.size()==userInput.size())
 			{
@@ -171,6 +201,21 @@ public class GameCode extends Application
 				yellow.setDisable(true);
 				int finalScore=combination.size()-1;
 				BackEnd.addScore("scores.csv", finalScore);
+				String scoreList="Scores\n";
+				ArrayList<Integer> scoreData=BackEnd.getScores("scores.csv");
+				for(int x=0;x<10;x++)
+				{
+					if(x<scoreData.size())
+					{
+						scoreList+=scoreData.get(x).toString()+"\n";
+					}
+				}
+				Label highScores=new Label(scoreList);
+				VBox nspace=new VBox(highScores);
+				Scene scene2=new Scene(nspace,300,300);
+				stage.setScene(scene2);
+				System.out.println(scoreList);
+				stage.show();
 			}
 			else if(combination.size()==userInput.size())
 			{
@@ -232,6 +277,21 @@ public class GameCode extends Application
 				yellow.setDisable(true);
 				int finalScore=combination.size()-1;
 				BackEnd.addScore("scores.csv", finalScore);
+				String scoreList="Scores\n";
+				ArrayList<Integer> scoreData=BackEnd.getScores("scores.csv");
+				for(int x=0;x<10;x++)
+				{
+					if(x<scoreData.size())
+					{
+						scoreList+=scoreData.get(x).toString()+"\n";
+					}
+				}
+				Label highScores=new Label(scoreList);
+				VBox nspace=new VBox(highScores);
+				Scene scene2=new Scene(nspace,300,300);
+				stage.setScene(scene2);
+				System.out.println(scoreList);
+				stage.show();
 			}
 			else if(combination.size()==userInput.size())
 			{

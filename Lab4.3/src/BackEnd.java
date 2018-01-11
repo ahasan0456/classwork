@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -27,6 +28,7 @@ public class BackEnd
 			{
 				CSVData.add(line);
 				line=br.readLine();
+				System.out.println(line);
 			}
 		}
 		catch (IOException e)
@@ -38,10 +40,10 @@ public class BackEnd
 	public static void addScore(String filestr, int score)
 	{
 		File csv=new File(filestr);
-		try(FileWriter fw=new FileWriter(csv))
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(csv, true)))
 		{
-			fw.write("\n"+score);
-			fw.close();
+			bw.append("\n"+score);
+			bw.close();
 		}
 		catch (IOException e)
 		{
