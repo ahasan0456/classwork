@@ -1,14 +1,13 @@
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import java.awt.Color;
 import javafx.stage.Stage;
+import java.util.Timer;
+import java.util.TimerTask;
 /*
 *	Author: Amir Hasan
 *	Last Updated: 1-7-18
@@ -63,12 +62,41 @@ public class GameCode extends Application
 				addOne(combination);
 				for(int i=0;i<combination.size();i++)
 				{
-					long now=System.nanoTime();
-					while(System.nanoTime()<now+1000000000)
+					if(combination.get(i).equals("Red"))
 					{
-						
+						red.setStyle("-fx-background-color: red;");
 					}
+					else if(combination.get(i).equals("Green"))
+					{
+						green.setStyle("-fx-background-color: green;");
+					}
+					else if(combination.get(i).equals("Blue"))
+					{
+						blue.setStyle("-fx-background-color: blue;");
+					}
+					else
+					{
+						yellow.setStyle("-fx-background-color: yellow;");
+					}
+					new Timer().schedule
+					(
+						new TimerTask()
+						{
+							public void run()
+							{
+								red.setStyle("-fx-background-color: lightgray;");
+								blue.setStyle("-fx-background-color: lightgray;");
+								green.setStyle("-fx-background-color: lightgray;");
+								yellow.setStyle("-fx-background-color: lightgray;");
+					        }
+						},500
+					);
 				}
+				userInput.clear();
+				red.setDisable(false);
+				green.setDisable(false);
+				blue.setDisable(false);
+				yellow.setDisable(false);
 			}
 		});
 		green.setOnAction(e ->
@@ -93,7 +121,43 @@ public class GameCode extends Application
 				score++;
 				scoreDisp.setText("Score: "+score);
 				addOne(combination);
-				
+				for(int i=0;i<combination.size();i++)
+				{
+					if(combination.get(i).equals("Red"))
+					{
+						red.setStyle("-fx-background-color: red;");
+					}
+					else if(combination.get(i).equals("Green"))
+					{
+						green.setStyle("-fx-background-color: green;");
+					}
+					else if(combination.get(i).equals("Blue"))
+					{
+						blue.setStyle("-fx-background-color: blue;");
+					}
+					else
+					{
+						yellow.setStyle("-fx-background-color: yellow;");
+					}
+					new Timer().schedule
+					(
+						new TimerTask()
+						{
+							public void run()
+							{
+								red.setStyle("-fx-background-color: lightgray;");
+								blue.setStyle("-fx-background-color: lightgray;");
+								green.setStyle("-fx-background-color: lightgray;");
+								yellow.setStyle("-fx-background-color: lightgray;");
+					        }
+						},500 
+					);
+				}
+				userInput.clear();
+				red.setDisable(false);
+				green.setDisable(false);
+				blue.setDisable(false);
+				yellow.setDisable(false);
 			}
 		});
 		blue.setOnAction(e ->
@@ -118,7 +182,43 @@ public class GameCode extends Application
 				score++;
 				scoreDisp.setText("Score: "+score);
 				addOne(combination);
-				
+				for(int i=0;i<combination.size();i++)
+				{
+					if(combination.get(i).equals("Red"))
+					{
+						red.setStyle("-fx-background-color: red;");
+					}
+					else if(combination.get(i).equals("Green"))
+					{
+						green.setStyle("-fx-background-color: green;");
+					}
+					else if(combination.get(i).equals("Blue"))
+					{
+						blue.setStyle("-fx-background-color: blue;");
+					}
+					else
+					{
+						yellow.setStyle("-fx-background-color: yellow;");
+					}
+					new Timer().schedule
+					(
+						new TimerTask()
+						{
+							public void run()
+							{
+								red.setStyle("-fx-background-color: lightgray;");
+								blue.setStyle("-fx-background-color: lightgray;");
+								green.setStyle("-fx-background-color: lightgray;");
+								yellow.setStyle("-fx-background-color: lightgray;");
+					        }
+						},500 
+					);
+				}
+				userInput.clear();
+				red.setDisable(false);
+				green.setDisable(false);
+				blue.setDisable(false);
+				yellow.setDisable(false);
 			}
 		});
 		yellow.setOnAction(e ->
@@ -143,17 +243,90 @@ public class GameCode extends Application
 				score++;
 				scoreDisp.setText("Score: "+score);
 				addOne(combination);
-				
+				for(int i=0;i<combination.size();i++)
+				{
+					if(combination.get(i).equals("Red"))
+					{
+						red.setStyle("-fx-background-color: red;");
+					}
+					else if(combination.get(i).equals("Green"))
+					{
+						green.setStyle("-fx-background-color: green;");
+					}
+					else if(combination.get(i).equals("Blue"))
+					{
+						blue.setStyle("-fx-background-color: blue;");
+					}
+					else
+					{
+						yellow.setStyle("-fx-background-color: yellow;");
+					}
+					new Timer().schedule
+					(
+						new TimerTask()
+						{
+							public void run()
+							{
+								red.setStyle("-fx-background-color: lightgray;");
+								blue.setStyle("-fx-background-color: lightgray;");
+								green.setStyle("-fx-background-color: lightgray;");
+								yellow.setStyle("-fx-background-color: lightgray;");
+					        }
+						},500 
+					);
+				}
+				userInput.clear();
+				red.setDisable(false);
+				green.setDisable(false);
+				blue.setDisable(false);
+				yellow.setDisable(false);
 			}
 		});
 		VBox space=new VBox(100,buttons,scoreDisp);
 		Scene scene=new Scene(space,300,300);
 		stage.setScene(scene);
 		stage.show();
+		red.setDisable(true);
+		green.setDisable(true);
+		blue.setDisable(true);
+		yellow.setDisable(true);
+		if(combination.get(0).equals("Red"))
+		{
+			red.setStyle("-fx-background-color: red;");
+		}
+		else if(combination.get(0).equals("Green"))
+		{
+			green.setStyle("-fx-background-color: green;");
+		}
+		else if(combination.get(0).equals("Blue"))
+		{
+			blue.setStyle("-fx-background-color: blue;");
+		}
+		else
+		{
+			yellow.setStyle("-fx-background-color: yellow;");
+		}
+		new Timer().schedule
+		(
+			new TimerTask()
+			{
+				public void run()
+				{
+					red.setStyle("-fx-background-color: lightgray;");
+					blue.setStyle("-fx-background-color: lightgray;");
+					green.setStyle("-fx-background-color: lightgray;");
+					yellow.setStyle("-fx-background-color: lightgray;");
+					red.setDisable(false);
+					green.setDisable(false);
+					blue.setDisable(false);
+					yellow.setDisable(false);
+		        }
+			},500
+		);
 	}
 	public static boolean checkPress(ArrayList<String> correct, ArrayList<String> user)
 	{
-		if(user.get(user.size()-1).equals(correct.get(correct.size()-1)))
+		if(user.get(user.size()-1).equals(correct.get(user.size()-1)))
 		{
 			return true;
 		}
