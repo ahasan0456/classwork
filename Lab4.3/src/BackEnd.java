@@ -28,7 +28,6 @@ public class BackEnd
 			{
 				CSVData.add(line);
 				line=br.readLine();
-				System.out.println(line);
 			}
 		}
 		catch (IOException e)
@@ -57,6 +56,7 @@ public class BackEnd
 		for(int i=0;i<scoreList.size();i++)
 		{
 			scoreList.set(i, Integer.parseInt(data.get(i+1)));
+			System.out.println(scoreList.get(i));
 		}
 		Collections.sort(scoreList);
 		return scoreList;

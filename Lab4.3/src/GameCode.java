@@ -77,6 +77,7 @@ public class GameCode extends Application
 				addOne(combination);
 				for(int i=0;i<combination.size();i++)
 				{
+					System.out.println(combination.get(i));
 					if(combination.get(i).equals("Red"))
 					{
 						red.setStyle("-fx-background-color: red;");
@@ -93,19 +94,10 @@ public class GameCode extends Application
 					{
 						yellow.setStyle("-fx-background-color: yellow;");
 					}
-					new Timer().schedule
-					(
-						new TimerTask()
-						{
-							public void run()
-							{
-								red.setStyle("-fx-background-color: lightgray;");
-								blue.setStyle("-fx-background-color: lightgray;");
-								green.setStyle("-fx-background-color: lightgray;");
-								yellow.setStyle("-fx-background-color: lightgray;");
-					        }
-						},500
-					);
+					red.setStyle("-fx-background-color: lightgray;");
+					blue.setStyle("-fx-background-color: lightgray;");
+					green.setStyle("-fx-background-color: lightgray;");
+					yellow.setStyle("-fx-background-color: lightgray;");
 				}
 				userInput.clear();
 				red.setDisable(false);
@@ -153,6 +145,7 @@ public class GameCode extends Application
 				addOne(combination);
 				for(int i=0;i<combination.size();i++)
 				{
+					System.out.println(combination.get(i));
 					if(combination.get(i).equals("Red"))
 					{
 						red.setStyle("-fx-background-color: red;");
@@ -169,19 +162,10 @@ public class GameCode extends Application
 					{
 						yellow.setStyle("-fx-background-color: yellow;");
 					}
-					new Timer().schedule
-					(
-						new TimerTask()
-						{
-							public void run()
-							{
-								red.setStyle("-fx-background-color: lightgray;");
-								blue.setStyle("-fx-background-color: lightgray;");
-								green.setStyle("-fx-background-color: lightgray;");
-								yellow.setStyle("-fx-background-color: lightgray;");
-					        }
-						},500 
-					);
+					red.setStyle("-fx-background-color: lightgray;");
+					blue.setStyle("-fx-background-color: lightgray;");
+					green.setStyle("-fx-background-color: lightgray;");
+					yellow.setStyle("-fx-background-color: lightgray;");
 				}
 				userInput.clear();
 				red.setDisable(false);
@@ -229,6 +213,7 @@ public class GameCode extends Application
 				addOne(combination);
 				for(int i=0;i<combination.size();i++)
 				{
+					System.out.println(combination.get(i));
 					if(combination.get(i).equals("Red"))
 					{
 						red.setStyle("-fx-background-color: red;");
@@ -245,19 +230,10 @@ public class GameCode extends Application
 					{
 						yellow.setStyle("-fx-background-color: yellow;");
 					}
-					new Timer().schedule
-					(
-						new TimerTask()
-						{
-							public void run()
-							{
-								red.setStyle("-fx-background-color: lightgray;");
-								blue.setStyle("-fx-background-color: lightgray;");
-								green.setStyle("-fx-background-color: lightgray;");
-								yellow.setStyle("-fx-background-color: lightgray;");
-					        }
-						},500 
-					);
+					red.setStyle("-fx-background-color: lightgray;");
+					blue.setStyle("-fx-background-color: lightgray;");
+					green.setStyle("-fx-background-color: lightgray;");
+					yellow.setStyle("-fx-background-color: lightgray;");
 				}
 				userInput.clear();
 				red.setDisable(false);
@@ -305,6 +281,7 @@ public class GameCode extends Application
 				addOne(combination);
 				for(int i=0;i<combination.size();i++)
 				{
+					System.out.println(combination.get(i));
 					if(combination.get(i).equals("Red"))
 					{
 						red.setStyle("-fx-background-color: red;");
@@ -321,19 +298,10 @@ public class GameCode extends Application
 					{
 						yellow.setStyle("-fx-background-color: yellow;");
 					}
-					new Timer().schedule
-					(
-						new TimerTask()
-						{
-							public void run()
-							{
-								red.setStyle("-fx-background-color: lightgray;");
-								blue.setStyle("-fx-background-color: lightgray;");
-								green.setStyle("-fx-background-color: lightgray;");
-								yellow.setStyle("-fx-background-color: lightgray;");
-					        }
-						},500 
-					);
+					red.setStyle("-fx-background-color: lightgray;");
+					blue.setStyle("-fx-background-color: lightgray;");
+					green.setStyle("-fx-background-color: lightgray;");
+					yellow.setStyle("-fx-background-color: lightgray;");
 				}
 				userInput.clear();
 				red.setDisable(false);
